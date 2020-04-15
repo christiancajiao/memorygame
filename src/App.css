@@ -1,38 +1,357 @@
-.App {
-  text-align: center;
+body {
+  background-image: url(./ojo.png), radial-gradient(#c33764, #1d2671);
+  background-repeat: no-repeat, repeat;
+  background-size: 30%, 100%;
+  background-position: center center;
+  opacity: 30%, 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.containerOfContainers {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.fondo {
+  position: absolute;
+  background-image: url(./circulo.png);
+  opacity: 80%;
+
+  background-size: contain;
+  background-position: center;
+  height: 900px;
+  width: 98%;
+  filter: hue-rotate(0deg);
+  filter: contrast(100%);
+  filter: brightness(1);
+  background-repeat: no-repeat;
+  animation-name: brillo;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+@keyframes brillo {
+  0% {
+    filter: hue-rotate(0deg);
+    filter: contrast(100%);
+    filter: brightness(1);
+  }
+  25% {
+    filter: hue-rotate(20deg);
+    filter: contrast(80%);
+    filter: brightness(1.5);
+  }
+  50% {
+    filter: hue-rotate(0deg);
+    filter: contrast(90%);
+    filter: brightness(2);
+  }
+  75% {
+    filter: hue-rotate(20deg);
+    filter: contrast(100%);
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+    filter: contrast(100%);
+    filter: brightness(1);
+  }
+}
+.cardContainer {
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  background-size: contain;
+  margin-top: 6%;
+
+  border-radius: 10px;
+  display: grid;
+  width: 530px;
+  height: 710px;
+  grid-gap: 100px 80px;
+  grid-template-columns: 60px 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px 60px;
+}
+.card {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  color: rgb(219, 219, 219);
+  width: 100px;
+  height: 140px;
+  font-size: 0px;
+
+  background-image: url(./backCard.png) !important;
+
+  background-size: 100% 100%;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 3px 2px 20px 0 rgba(46, 61, 73, 0.637);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-out;
+}
+.card:active {
+  transform: rotateY(180deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cardClick {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  width: 100px;
+  height: 140px;
+  backface-visibility: hidden;
+  background-color: rgba(43, 226, 119, 0);
+  border-radius: 10px;
+  margin: 10px;
+
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-out;
+}
+.cardClick:active {
+  transform: rotateY(180deg);
+}
+.turnos {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  color: rgb(114, 0, 221);
+  width: 150px;
+  height: 50px;
+  font-size: 25px;
+  border: 3px solid rgb(48, 33, 1);
+  background-color: rgb(201, 151, 13);
+  border-radius: 40px;
+  margin: 10px;
+  box-shadow: 3px 2px 20px 0 rgba(46, 61, 73, 0.637);
+}
+.buttonsContainer {
+  width: 400px;
+  border-radius: 25px;
+  background-color: rgba(222, 184, 135, 0);
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: grid;
+  grid-gap: 200px;
+  grid-template-columns: 100px 100px 100px;
+}
+.imageClick {
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  width: 100px;
+  height: 140px;
+  background-color: rgba(43, 226, 119, 0);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.resetButton {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  color: rgb(114, 0, 221);
+  width: 150px;
+  height: 50px;
+  font-size: 25px;
+  border: 3px solid rgb(48, 33, 1);
+  background-color: rgb(201, 151, 13);
+  border-radius: 40px;
+  margin: 10px;
+  box-shadow: 3px 2px 20px 0 rgba(46, 61, 73, 0.637);
+}
+.image {
+  display: none;
+}
+.ee {
+  background-image: url(./ojo.png);
+  position: absolute;
+  z-index: 2;
+  background-size: contain;
+  background-position: center center;
+  opacity: 30%;
+  margin-top: 17%;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  width: 385px;
+  height: 410px;
+}
+.reloj {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  color: rgb(114, 0, 221);
+  width: 150px;
+  height: 50px;
+  font-size: 25px;
+  border: 3px solid rgb(48, 33, 1);
+  background-color: rgb(201, 151, 13);
+  border-radius: 40px;
+  margin: 10px;
+  box-shadow: 3px 2px 20px 0 rgba(46, 61, 73, 0.637);
+}
+.playing_win {
+  display: none;
+}
+.winning_win {
+  margin: auto;
+  display: block;
+  position: absolute;
+  z-index: 12;
+  height: 100vh;
+  width: 100%;
+
+  background-color: rgba(61, 0, 31, 0.541);
+  color: #1d2671;
+}
+.win_message {
+  background-image: url(./exodia.png);
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 100px;
+  margin: auto;
+  margin-top: 12%;
+  color: rgb(78, 0, 151);
+  font-family: "Permanent Marker", cursive;
+  border-radius: 40px;
+  width: 700px;
+  height: 550px;
+  background-color: rgba(201, 151, 13, 0);
+  filter: hue-rotate(0deg);
+  filter: contrast(100%);
+  filter: brightness(1);
+
+  background-size: 100% 100%;
+  animation-name: exodia;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes exodia {
+  0% {
+    filter: hue-rotate(0deg);
+    filter: contrast(100%);
+    filter: brightness(1);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    filter: hue-rotate(20deg);
+    filter: contrast(80%);
+    filter: brightness(1.2);
   }
+  50% {
+    filter: hue-rotate(0deg);
+    filter: contrast(90%);
+    filter: brightness(1.8);
+  }
+  75% {
+    filter: hue-rotate(20deg);
+    filter: contrast(100%);
+    filter: brightness(1.2);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+    filter: contrast(100%);
+    filter: brightness(1);
+  }
+}
+.win_estrellas {
+  margin: auto;
+  width: 400px;
+  height: 100px;
+  display: grid;
+  grid-template-rows: 80px 80px 80px;
+  grid-gap: 10px;
+  border: none;
+}
+.estrella {
+  border: none;
+  width: 70px;
+  height: 70px;
+  filter: hue-rotate(0deg);
+  filter: contrast(100%);
+  filter: brightness(1);
+  background-image: url(./imagenes/estrella.png);
+  background-size: 100% 100%;
+  animation-name: star;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes star {
+  0% {
+    filter: hue-rotate(0deg);
+    filter: contrast(100%);
+    filter: brightness(1);
+  }
+  25% {
+    filter: hue-rotate(20deg);
+    filter: contrast(80%);
+    filter: brightness(1.5);
+  }
+  50% {
+    filter: hue-rotate(0deg);
+    filter: contrast(90%);
+    filter: brightness(2);
+  }
+  75% {
+    filter: hue-rotate(20deg);
+    filter: contrast(100%);
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+    filter: contrast(100%);
+    filter: brightness(1);
+  }
+}
+.exitwin {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  color: rgb(114, 0, 221);
+  width: 250px;
+  height: 100px;
+  font-size: 25px;
+  border: 3px solid rgb(48, 33, 1);
+  background-color: rgb(201, 151, 13);
+  border-radius: 40px;
+  margin: 10px;
+  box-shadow: 3px 2px 20px 0 rgba(46, 61, 73, 0.637);
+}
+.estrellaoculta {
+  border: none;
+  width: 70px;
+  height: 70px;
+  filter: hue-rotate(0deg);
+  filter: contrast(100%);
+  filter: brightness(1);
+  background-image: url(./imagenes/estrellaoculta.png);
+  background-size: 100% 100%;
+  animation-name: star;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
